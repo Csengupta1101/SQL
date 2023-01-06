@@ -5,3 +5,5 @@ IEC - International Electrotechnical commission.
 Vannevar Bush first coined the idea of database.
 IMS (information management system) by IBM was used to keep track of all parts pertaining to apollo's 
 moon mission.
+
+Flat file data structure vs DBMS Data
