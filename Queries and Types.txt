@@ -1,8 +1,38 @@
 -- Finding Year,date,month from date format in MySQL --
+
 select *, substr(birth_day,1,4) as birth_year from employee;
 select first_name , extract(day from birth_day) from employee;
 select first_name , extract(month from birth_day) from employee;
 select first_name , extract(year from birth_day) from employee;
+
+
+-- Current time finding --
+
+select first_name ,current_timestamp() from employee;
+select first_name ,current_date() from employee;
+select first_name ,current_time() from employee;
+
+-- Date , time finding with interval --
+
+select first_name, current_date + interval '3' day from employee;
+select first_name, current_time + interval '3' hour from employee;
+select first_name, current_time + interval '3' minute from employee;
+select first_name, current_time + interval '3' minute_second from employee;
+
+-- Age Calculation --
+
+select first_name, extract(year from current_date) - extract(year from birth_day)  as age from employee;
+
+-- Case When Statement --
+
+select first_name ,
+case
+	when super_id=100 then 'Branch manager'
+	when super_id is null then ' Corporate manager'
+	else 'Associate'
+end as 'designation'
+from employee;
+
 
 
 -- Distinct Count --
