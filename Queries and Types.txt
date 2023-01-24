@@ -28,6 +28,37 @@ select first_name, extract(year from current_date) - extract(year from birth_day
 
 SELECT * , concat(first_name,' ',last_name) as fname FROM companydatabase.employee;
 
+--Null Values Handling --
+
+-- Fill null values with NA--
+SELECT Name , coalesce(Color,'NA') FROM adventureworks.product;
+
+
+
+-- MySQL Constraints --
+
+-- Database creation --
+
+CREATE SCHEMA `mahindra` ;
+use mahindra;
+create table mahindra.employee_details(
+id int not null unique ,
+first_name varchar(20) not null,
+last_name varchar(20) not null,
+salary int not null,
+dob date not null,
+department varchar(50) not null default "Mahindra Holidays",
+primary key(id)
+);
+
+-- Adding Constraints --
+alter table employee_details
+add constraint unique(first_name);
+
+-- Single row data insertion --
+insert into employee_details values(45,'Chandan','Sengupta',65000,'1988-01-11','data');
+
+
 -- Case When Statement --
 
 select first_name ,
@@ -37,7 +68,6 @@ case
 	else 'Associate'
 end as 'designation'
 from employee;
-
 
 
 -- Distinct Count --
