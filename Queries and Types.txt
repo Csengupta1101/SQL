@@ -1,0 +1,9 @@
+-- Finding Year,date,month from date format in MySQL --
+select *, substr(birth_day,1,4) as birth_year from employee;
+select first_name , extract(day from birth_day) from employee;
+select first_name , extract(month from birth_day) from employee;
+select first_name , extract(year from birth_day) from employee;
+
+
+-- Distinct Count --
+select count(distinct super_id) from employee;
