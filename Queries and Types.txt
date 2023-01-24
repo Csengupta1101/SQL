@@ -23,6 +23,11 @@ select first_name, current_time + interval '3' minute_second from employee;
 
 select first_name, extract(year from current_date) - extract(year from birth_day)  as age from employee;
 
+
+-- Concat method --
+
+SELECT * , concat(first_name,' ',last_name) as fname FROM companydatabase.employee;
+
 -- Case When Statement --
 
 select first_name ,
