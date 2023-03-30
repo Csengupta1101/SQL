@@ -1,1 +1,1 @@
-SELECT * FROM employee ORDER BY salary DESC;
+SELECT count(first_name) FROM employee WHERE salary < 200000 GROUP BY sex;
