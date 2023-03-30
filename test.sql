@@ -1,2 +1,1 @@
--- This is a DQL syntax for gathering all data from branch table --
-select * FROM branch;
+SELECT * FROM employee ORDER BY salary DESC;
